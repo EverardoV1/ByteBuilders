@@ -22,7 +22,7 @@ import { Navigate } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-const apiBase = 'https://bytebuilders-app.onrender.com'
+const apiBase = 'https://bytebuilders-app.onrender.com/'
 
 function App() {
   const [isDark, setDark] = useState(false);

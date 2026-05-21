@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
 
 // ===== GLOBAL STATE =====
-const apiBase = 'https://bytebuilders-app.onrender.com'
+const apiBase = 'https://bytebuilders-app.onrender.com/'
 
 
 function UserManagement(){

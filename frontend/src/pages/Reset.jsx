@@ -15,7 +15,7 @@ const PASS_REQUIREMENTS = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).+$/
 
 // ===== GLOBAL STATE =====
 
-const apiBase = 'https://bytebuilders-app.onrender.com'
+const apiBase = 'https://bytebuilders-app.onrender.com/'
 
 function ResetPassword(){
 
