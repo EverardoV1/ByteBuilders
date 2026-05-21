@@ -15,7 +15,7 @@ const allowedOrigins = process.env.FRONTEND_ORIGIN
 //Allows communication between frontend client and database server,
 //  without flagging CORS communication issues in the web browser
 const corsOptions = {
-  origin: ["https://becausewecaretx.com", "https://nominatim.openstreetmap.org", "https://www.becausewecaretx.com", "https://bytebuilders-hj0q.onrender.com/"],
+  origin: ["https://becausewecaretx.com", "https://nominatim.openstreetmap.org", "https://www.becausewecaretx.com", "https://bytebuilders-hj0q.onrender.com"],
   credentials: true,
 };
 
