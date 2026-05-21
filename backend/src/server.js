@@ -15,14 +15,18 @@ const allowedOrigins = process.env.FRONTEND_ORIGIN
 //Allows communication between frontend client and database server,
 //  without flagging CORS communication issues in the web browser
   const corsOptions = {
-    origin: ["https://becausewecaretx.com/"],
+    origin: ["https://becausewecaretx.com/", "https://nominatim.openstreetmap.org/"],
     credentials: true,
   };
 
 
 const app = express()
 app.use(cors(corsOptions))
-app.enable('trust proxy');
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 const PORT = process.env.PORT || 5003
