@@ -14,10 +14,10 @@ const allowedOrigins = process.env.FRONTEND_ORIGIN
 
 //Allows communication between frontend client and database server,
 //  without flagging CORS communication issues in the web browser
-  const corsOptions = {
-    origin: ["https://becausewecaretx.com/", "https://nominatim.openstreetmap.org/"],
-    credentials: true,
-  };
+const corsOptions = {
+  origin: ["https://becausewecaretx.com/", "https://nominatim.openstreetmap.org/"],
+  credentials: true,
+};
 
 
 const app = express()

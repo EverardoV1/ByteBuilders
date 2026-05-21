@@ -30,7 +30,6 @@ async function logoutUser()
         window.location.replace("/");
     }
 
-
 };
 
 
