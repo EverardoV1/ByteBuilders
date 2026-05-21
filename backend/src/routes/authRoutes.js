@@ -1048,35 +1048,83 @@ router.post('/getName', async (req, res)=> {
 
 });
 
+router.post('/getCurrentAdmin', async (req, res)=> {
+
+    const cookieToken = req.cookies.authcookie;
+    if(!cookieToken)
+    {
+        console.log("invalid cookie");
+        var name = "";
+        res.json({name: name}).send();
+    }
+    if(cookieToken)
+    {
+        let userID;
+        jwt.verify(cookieToken, process.env.JWT_SECRET, (err, user) => {
+            if(err) return console.log("Error or invalid cookie");
+            // req.user = user;
+            console.log("Authenticated with cookie as user: ", user);
+            userID = user.id;
+        });
+
+        const user = await prisma.user.findUnique({
+            where: {
+                id: userID
+            },
+        });
+
+        var id = user.id;
+        res.json({id: id).send();
+    }
+
+
+});
+
+
+
 router.post('/updateUserRole', async(req, res) => {
 
 
-    const {userID, newRole} = req.body
+    const {userID, newRole, adminID} = req.body
+
+    if(userID !== adminID)
+    {
+         const user = await prisma.user.update({
+            where: {
+                id: userID
+            },
+            data: { role: newRole}
+        });
+
+        res.sendStatus(201);
+    }
+    else
+    {
+        res.sendStatus(201);
+    }
 
 
-    const user = await prisma.user.update({
-        where: {
-            id: userID
-        },
-        data: { role: newRole}
-    });
-
-    res.sendStatus(201);
 
 });
 
 router.post('/deleteUser', async (req, res) => {
 
-    const { userID } = req.body;
+    const { userID, adminID } = req.body;
 
+    if(userID !== adminID)
+    {
+        const user = await prisma.user.delete({
+            where: {
+                id: userID
+            }
+        });
 
-    const user = await prisma.user.delete({
-        where: {
-            id: userID
-        }
-    });
-
-    res.sendStatus(201);
+        res.sendStatus(201);
+    }
+    else
+    {
+        res.sendStatus(201);
+    }
 
 });
 

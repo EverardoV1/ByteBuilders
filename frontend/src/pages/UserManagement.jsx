@@ -12,7 +12,7 @@ const apiBase = 'https://bytebuilders-app.onrender.com'
 function UserManagement(){
 
 
-
+    const [currentAdmin, setCurrentAdmin] = useState("");
     const [curRole, setCurRole] = useState(true);
 
     const [userList, setUserList] = useState([]);
@@ -56,7 +56,9 @@ function UserManagement(){
     {
         (async () => {
             var data = await authenticate();
+            var curId = await getCurrentAdmin();
             console.log(data);
+            setCurrentAdmin(curId);
             setUserList(data);
             setIsAuth(true);
         })()
@@ -210,7 +212,7 @@ async function authenticate()
     return users;
 }
 
-async function requestDeleteUser(selectedUser)
+async function requestDeleteUser(selectedUser, currentAdmin)
 {
     var split = selectedUser.split(",");
     var userID = parseInt(split[2]);
@@ -220,7 +222,7 @@ async function requestDeleteUser(selectedUser)
         let res = await fetch(apiBase + 'auth/deleteUser', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userID: userID }),
+            body: JSON.stringify({ userID: userID, adminID, currentAdmin }),
         });
         if(res.status === 201)
         {
@@ -237,7 +239,7 @@ async function requestDeleteUser(selectedUser)
 
 
 
-async function updateUserRole(selectedUser, selectedRole)
+async function updateUserRole(selectedUser, selectedRole, currentAdmin)
 {
      try {
         var split = selectedUser.split(",");
@@ -247,7 +249,7 @@ async function updateUserRole(selectedUser, selectedRole)
         let res = await fetch(apiBase + 'auth/updateUserRole', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userID: userID, newRole: newRole }),
+            body: JSON.stringify({ userID: userID, newRole: newRole, adminID: currentAdmin }),
         });
 
         if(res.status === 201)
@@ -261,6 +263,19 @@ async function updateUserRole(selectedUser, selectedRole)
 
 
 }
+
+async function getCurrentAdmin()
+{
+    let res = await fetch(apiBase + 'auth/getCurrentAdmin', {
+        credentials: 'include',
+        method: 'POST',
+        header: { 'Content-Type' : 'application/json'},
+    });
+    const data = await res.json();
+    return data.id;
+}
+
+
 
 
 
