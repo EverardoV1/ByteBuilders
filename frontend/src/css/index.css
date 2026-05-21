@@ -1,0 +1,164 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg-color: white;
+  --primary-text: #5d5757;
+  --secondary-text: #bda777;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
+  --opacity: rgba(0, 0, 0, 0.2);
+
+  --calendar-button-bg: #ec4899;
+  --calendar-button-hover: #db2777;
+  --calendar-button-active: #db2777;
+
+  --calendar-header-bg: #faebaed1;
+  --calendar-header-border: #c3b478;  
+
+  --calendar-day-bg: #fefbef;
+  --calendar-day-border: #d6d0b7;
+
+  --calendar-today-bg: #faf1cc;
+
+  --calendar-event-bg: #ec4899;
+  --calendar-event-text: #ffffff;
+  --calendar-event-border: #ec4899;
+  
+  --hero-pink: rgba(236, 72, 153, 0.20);
+  --hero-gold: rgba(254, 243, 199, 0.58);
+  --hero-white-top: rgba(255, 255, 255, 0.10);
+  --hero-white-bottom: rgba(255, 255, 255, 0.22);
+  --hero-overlay-shadow: rgba(255, 248, 238, 0.12);
+  --hero-title-color: var(--primary-text);
+  --hero-btn-primary-bg: #ec4899;
+  --hero-btn-primary-hover: #db2777;
+  --hero-btn-secondary-bg: rgba(255, 255, 255, 0.92);
+  --hero-btn-secondary-text: #374151;
+
+  --card-bg: #ffffff;
+  --card-text: #5d5757;
+  --card-border: rgba(220, 216, 216, 0.6);
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  --service-section-bg: rgba(243,26,134,0.06);
+  --service-section-border: rgba(243,134,188,0.14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+    background-color: #ec4899;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: 2px;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+button:hover {
+    background-color: #db2777;
+    box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+[data-theme="dark"]{
+  --bg-color: #4A4343;
+  --primary-text: white;
+  --secondary-text: #bda777;
+  --toggle-bg:#283452;
+  --toggle-fg: #0ab6ff;
+  --opacity: rgba(0, 0, 0, 0.6);
+
+  --calendar-button-bg: #db2777;
+  --calendar-button-hover: #ec4899;
+  --calendar-button-active: #ec4899;
+
+  --calendar-header-bg: #b3a17c;
+  --calendar-header-border: #5b5b5b;
+
+  --calendar-day-bg: #5b5252;
+  --calendar-day-border: #8a8989;
+
+  --calendar-today-bg: #b3a17c;
+
+  --calendar-event-bg: #ec4899;
+  --calendar-event-border: #ec4899; 
+
+  --card-bg: #5b5252;
+  --card-text: #f7f3f3;
+  --card-border: rgba(255,255,255,0.08);
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.28);
+
+  --fade-section-bg: rgba(255, 255, 255, 0.04);
+  --fade-section-border: rgba(255, 255, 255, 0.08);
+
+  --hero-pink: rgba(236, 72, 153, 0.26);
+  --hero-gold: rgba(189, 167, 119, 0.18);
+  --hero-white-top: rgba(255, 255, 255, 0.03);
+  --hero-white-bottom: rgba(255, 255, 255, 0.06);
+  --hero-overlay-shadow: rgba(0, 0, 0, 0.28);
+  --hero-title-color: #fff7f9;
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+ /* button {
+    background-color: #f9f9f9;
+  }*/
+}
+
+

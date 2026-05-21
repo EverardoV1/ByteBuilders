@@ -1,7 +1,7 @@
 {
   "name": "actual_test",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. npm init -y 2. npm install express 3. npm install --save-dev nodemon 4. npm install express bcryptjs googleapis jsonwebtoken pg  5. npm install prisma @prisma/client  6. npx prisma init 7. npx prisma generate  8. docker compose build  9. docker compose run app npx prisma migrate dev --name init",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -23,16 +23,26 @@
   },
   "homepage": "https://github.com/JosephCardoza03/actual_test#readme",
   "dependencies": {
-    "@prisma/client": "^6.18.0",
+    "@prisma/client": "^6.19.2",
     "bcryptjs": "^3.0.3",
-    "dotenv": "^17.4.2",
-    "express": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "csurf": "^1.11.0",
+    "express": "^5.2.1",
     "googleapis": "^166.0.0",
-    "jsonwebtoken": "^9.0.2",
-    "pg": "^8.16.3"
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "pg": "^8.18.0",
+    "prisma": "^6.19.2"
   },
   "devDependencies": {
-    "prisma": "^6.18.0",
-    "react-scripts": "^5.0.1"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "googleapis": "^166.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^8.0.1",
+    "nodemon": "^3.1.11",
+    "pg": "^8.18.0",
+    "prisma": "^6.19.3"
   }
 }
