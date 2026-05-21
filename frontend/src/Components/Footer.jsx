@@ -10,8 +10,8 @@ function Footer() {
                     <span className="footer-name">Because We Care</span>
                 </div>
                 <div className="footer-links">
-                    <Link to="/features" className="footer-link">Features</Link>
-                    <Link to="/learn" className="footer-link">Learn more</Link>
+                {/*<Link to="/features" className="footer-link">Features</Link>
+                    <Link to="/learn" className="footer-link">Learn more</Link>*/}
 
                 </div>
                 <div className="footer-socials">

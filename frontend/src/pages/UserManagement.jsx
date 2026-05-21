@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
 
 // ===== GLOBAL STATE =====
-const apiBase = 'https://becausewecare.onrender.com/'
+const apiBase = 'https://bytebuilders-app.onrender.com'
 
 
 function UserManagement(){
@@ -55,9 +55,8 @@ function UserManagement(){
     if(!isAuth)
     {
         (async () => {
-            //TODO: Add authentication code here, like with calendar.jsx
             var data = await authenticate();
-
+            console.log(data);
             setUserList(data);
             setIsAuth(true);
         })()
@@ -96,17 +95,12 @@ function UserManagement(){
         <h1>User Management</h1>
         <div className="login-container">
 
-
-
-
-
         <p className="error">{}</p>
 
         <h2> Update/Delete </h2>
         { !requestSuccess &&
             <form className="login-form">
             <div className="form-group">
-
 
             {/* User selection box */}
             <div className = "form-dropdown">

@@ -2,7 +2,7 @@ import "../css/Logout.css"
 
 // ===== GLOBAL STATE =====
 
-const apiBase = 'https://becausewecare.onrender.com/'
+const apiBase = 'https://bytebuilders-app.onrender.com'
 
 function Logout(){
 
