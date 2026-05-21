@@ -6,16 +6,18 @@ import appointmentRoutes from './routes/appointmentRoutes.js'
 import cors from "cors";
 
 
+/*
 const allowedOrigins = process.env.FRONTEND_ORIGIN
   ? process.env.FRONTEND_ORIGIN.split(',').map((origin) => origin.trim())
   : ["http://localhost:3000", "https://nominatim.openstreetmap.org", "https://bytebuilders-0ntq.onrender.com","https://bytebuilders-hj0q.onrender.com", "https://becausewecaretx.com/"];
+*/
 
 //Allows communication between frontend client and database server,
 //  without flagging CORS communication issues in the web browser
-const corsOptions = {
-    origin: allowedOrigins,
+  const corsOptions = {
+    origin: ["https://becausewecaretx.com/"],
     credentials: true,
-};
+  };
 
 
 const app = express()
