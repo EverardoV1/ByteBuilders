@@ -222,7 +222,7 @@ async function requestDeleteUser(selectedUser, currentAdmin)
         let res = await fetch(apiBase + 'auth/deleteUser', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userID: userID, currentAdmin }),
+            body: JSON.stringify({ userID: userID, adminID: currentAdmin }),
         });
         if(res.status === 201)
         {

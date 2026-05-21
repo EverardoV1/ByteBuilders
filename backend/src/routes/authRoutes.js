@@ -1074,7 +1074,7 @@ router.post('/getCurrentAdmin', async (req, res)=> {
         });
 
         var id = user.id;
-        res.json({id: id).send();
+        res.json({id: id}).send();
     }
 
 
