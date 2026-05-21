@@ -15,7 +15,7 @@ const allowedOrigins = process.env.FRONTEND_ORIGIN
 //Allows communication between frontend client and database server,
 //  without flagging CORS communication issues in the web browser
 const corsOptions = {
-  origin: ["https://becausewecaretx.com/", "https://nominatim.openstreetmap.org/"],
+  origin: ["https://becausewecaretx.com", "https://nominatim.openstreetmap.org", "https://www.becausewecaretx.com", "https://bytebuilders-hj0q.onrender.com/"],
   credentials: true,
 };
 
@@ -23,7 +23,7 @@ const corsOptions = {
 const app = express()
 app.use(cors(corsOptions))
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://becausewecaretx.com/");
+  res.header("Access-Control-Allow-Origin", "https://becausewecaretx.com");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
